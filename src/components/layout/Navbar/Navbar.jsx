@@ -88,8 +88,14 @@ const Navbar = () => {
             transition={{ duration: 0.25 }}
           >
             {navItems.map((item) => (
-              <MobileNavItem key={item.to} onClick={() => setMenuOpen(false)}>
-                <Link to={item.to} smooth duration={600} offset={-64}>
+              <MobileNavItem key={item.to}>
+                <Link
+                  to={item.to}
+                  smooth
+                  duration={600}
+                  offset={-64}
+                  onClick={() => setMenuOpen(false)}
+                >
                   {item.label}
                 </Link>
               </MobileNavItem>
