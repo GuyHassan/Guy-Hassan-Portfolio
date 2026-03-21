@@ -1,127 +1,68 @@
 # Guy Hassan Portfolio 2026
 
-A modern, responsive portfolio website built with React and Vite, showcasing my projects, skills, and experience.
+A clean, modern personal portfolio built with React and Vite. It highlights key sections:
+- Projects (with details and links)
+- About (personal introduction and goals)
+- Skills (technical abilities)
+- Timeline (experience and milestones)
+- Contact (easy connection methods)
 
-## 🚀 Features
+## Main technologies
+- React 18
+- Vite
+- styled-components
+- framer-motion
+- react-scroll
+- Font Awesome
 
-- **Responsive Design**: Optimized for all devices and screen sizes
-- **Dark/Light Theme**: Toggle between themes with smooth animations
-- **Interactive UI**: Smooth animations and transitions using Framer Motion
-- **Modern Tech Stack**: Built with React, Vite, and Styled Components
-- **Fast Performance**: Optimized with Vite for lightning-fast development and builds
+## Run locally
+1. `npm install`
+2. `npm run dev`
+3. open `http://localhost:5173`
 
-## 🛠️ Technologies Used
+## Scripts
+- `npm run dev` - development server
+- `npm run build` - production build
+- `npm run preview` - preview the build
+- `npm run lint` - code linting
 
-- **Frontend Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Styled Components
-- **Animations**: Framer Motion
-- **Icons**: Font Awesome
-- **Smooth Scrolling**: React Scroll
+## Why this project is cool
+- Smooth transitions and animations.
+- Dark/light theme toggle.
+- One-page navigation with anchors.
+- Easy to extend with new sections or projects.
 
-## 📦 Installation
+## Customization
+- Change color themes in `src/styles/themes.js`
+- Add or update project entries in `src/data/index.js`
+- Update section behavior in `src/components/sections/*`
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/GuyHassan/Guy-Hassan-Portfolio.git
-   cd guy-portfolio-2026
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 📜 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## 📁 Project Structure
-
+## Project structure
 ```
 src/
 ├── components/
 │   ├── layout/
 │   │   └── Navbar/
 │   ├── sections/
-│   │   ├── About/
-│   │   ├── Contact/
-│   │   ├── Hero/
-│   │   ├── Personal/
-│   │   ├── Projects/
-│   │   ├── Skills/
-│   │   └── Timeline/
-│   └── ui/
-│       ├── Button/
-│       ├── Cursor/
-│       └── ThemeSwitcher/
+   │   ├── About/
+   │   ├── Contact/
+   │   ├── Hero/
+   │   ├── Personal/
+   │   ├── Projects/
+   │   ├── Skills/
+   │   └── Timeline/
+   └── ui/
+	   ├── Button/
+	   ├── Cursor/
+	   └── ThemeSwitcher/
 ├── context/
 │   └── ThemeContext.jsx
 ├── data/
 │   └── index.js
 ├── styles/
 │   ├── GlobalStyles.js
-│   ├── theme.js
-│   └── themes.js
+   ├── theme.js
+   └── themes.js
 └── assets/
-    └── images/
+	└── images/
 ```
-
-## 🎨 Customization
-
-### Theme Colors
-Edit `src/styles/themes.js` to customize colors, fonts, and other design tokens.
-
-### Content
-Update `src/data/index.js` to modify portfolio content, projects, skills, and personal information.
-
-### Components
-Each section is modular and can be easily customized by editing the respective component files.
-
-## 🚀 Deployment
-
-### Build for Production
-```bash
-npm run build
-```
-
-The built files will be in the `dist/` directory, ready for deployment to any static hosting service like:
-- Netlify
-- Vercel
-- GitHub Pages
-- AWS S3
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-Feel free to reach out if you have any questions or suggestions!
-
-- **Email**: [your-email@example.com]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [https://github.com/GuyHassan]
-
----
-
-⭐ If you like this project, please give it a star!
