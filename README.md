@@ -22,7 +22,7 @@ A clean, modern personal portfolio built with React and Vite. It highlights key 
 
 ## Deploy to GitHub Pages
 1. `npm run deploy`
-2. Visit: `[https://GuyHassan.github.io/Guy-Hassan-Portfolio/](https://guy-hassan-portfolio.vercel.app)`
+2. Visit: `https://guy-hassan-portfolio.vercel.app`
 
 ## Scripts 🛠️
 - `npm run dev` - development server
