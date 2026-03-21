@@ -1,6 +1,6 @@
 import { ThemeContextProvider } from './context/ThemeContext';
 import GlobalStyles from './styles/GlobalStyles';
-// import Cursor from './components/ui/Cursor/Cursor';
+import Cursor from './components/ui/Cursor/Cursor';
 import Navbar from './components/layout/Navbar/Navbar';
 import Hero from './components/sections/Hero/Hero';
 import About from './components/sections/About/About';
@@ -15,7 +15,7 @@ function App() {
   return (
     <ThemeContextProvider>
       <GlobalStyles />
-      {/* <Cursor /> */}
+      <Cursor />
       <Navbar />
       <main>
         <Hero />

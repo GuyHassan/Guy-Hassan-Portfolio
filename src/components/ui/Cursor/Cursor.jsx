@@ -13,14 +13,19 @@ const Cursor = () => {
 
     window.addEventListener('mousemove', onMove);
 
-    const interactives = document.querySelectorAll('a, button, [data-cursor]');
-    interactives.forEach((el) => {
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-    });
+    // Use setTimeout to ensure DOM is ready
+    const timer = setTimeout(() => {
+      const interactives = document.querySelectorAll('a, button, [data-cursor]');
+      interactives.forEach((el) => {
+        el.addEventListener('mouseenter', onEnter);
+        el.addEventListener('mouseleave', onLeave);
+      });
+    }, 100);
 
     return () => {
       window.removeEventListener('mousemove', onMove);
+      clearTimeout(timer);
+      const interactives = document.querySelectorAll('a, button, [data-cursor]');
       interactives.forEach((el) => {
         el.removeEventListener('mouseenter', onEnter);
         el.removeEventListener('mouseleave', onLeave);

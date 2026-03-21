@@ -17,13 +17,18 @@ const ThemeSwitcher = () => {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => document.removeEventListener('mousedown', handleOutsideClick);
+    // Wait for DOM to be ready
+    const timer = setTimeout(() => {
+      const handleOutsideClick = (e) => {
+        if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+          setOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handleOutsideClick);
+      return () => document.removeEventListener('mousedown', handleOutsideClick);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
