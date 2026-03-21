@@ -1,37 +1,48 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CursorOuter, CursorInner } from './Cursor.styled';
 
 const Cursor = () => {
+  const [visible, setVisible] = useState(() => window.matchMedia('(pointer: fine)').matches);
   const [pos, setPos] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  // Once a touch is detected, never show cursor again (handles DevTools simulation too)
+  const hasTouched = useRef(false);
 
   useEffect(() => {
-    const onMove = (e) => setPos({ x: e.clientX, y: e.clientY });
+    const onTouch = () => {
+      hasTouched.current = true;
+      setVisible(false);
+    };
+
+    const onMouseMove = (e) => {
+      if (hasTouched.current) return;
+      setVisible(true);
+      setPos({ x: e.clientX, y: e.clientY });
+    };
 
     const onEnter = () => setIsHovering(true);
     const onLeave = () => setIsHovering(false);
 
-    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchstart', onTouch, { passive: true });
+    window.addEventListener('mousemove', onMouseMove);
 
-    // Use setTimeout to ensure DOM is ready
-    const timer = setTimeout(() => {
-      const interactives = document.querySelectorAll('a, button, [data-cursor]');
-      interactives.forEach((el) => {
-        el.addEventListener('mouseenter', onEnter);
-        el.addEventListener('mouseleave', onLeave);
-      });
-    }, 100);
+    const interactives = document.querySelectorAll('a, button, [data-cursor]');
+    interactives.forEach((el) => {
+      el.addEventListener('mouseenter', onEnter);
+      el.addEventListener('mouseleave', onLeave);
+    });
 
     return () => {
-      window.removeEventListener('mousemove', onMove);
-      clearTimeout(timer);
-      const interactives = document.querySelectorAll('a, button, [data-cursor]');
+      window.removeEventListener('touchstart', onTouch);
+      window.removeEventListener('mousemove', onMouseMove);
       interactives.forEach((el) => {
         el.removeEventListener('mouseenter', onEnter);
         el.removeEventListener('mouseleave', onLeave);
       });
     };
   }, []);
+
+  if (!visible) return null;
 
   return (
     <>
