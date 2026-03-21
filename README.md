@@ -1,13 +1,35 @@
-# Guy Hassan Portfolio 2026
+# Guy Hassan Portfolio 2026 🚀
 
+- Projects (with details and links)
+- About (personal introduction and goals)
+- Skills (technical abilities)
+- Timeline (experience and milestones)
+- Contact (easy connection methods)
 A clean, modern personal portfolio built with React and Vite. It highlights key sections:
+- 🧩 Projects (with details and links)
+- 👤 About (personal introduction and goals)
+- 💡 Skills (technical abilities)
+- 📆 Timeline (experience and milestones)
+- ✉️ Contact (easy connection methods)
 - Projects (with details and links)
 - About (personal introduction and goals)
 - Skills (technical abilities)
 - Timeline (experience and milestones)
 - Contact (easy connection methods)
 
-## Main technologies
+- React 18
+- Vite
+- styled-components
+- framer-motion
+- react-scroll
+- Font Awesome
+## Main technologies ⚙️
+- React 18
+- Vite
+- styled-components
+- framer-motion
+- react-scroll
+- Font Awesome
 - React 18
 - Vite
 - styled-components
@@ -15,29 +37,51 @@ A clean, modern personal portfolio built with React and Vite. It highlights key 
 - react-scroll
 - Font Awesome
 
-## Run locally
+## Run locally 🖥️
 1. `npm install`
 2. `npm run dev`
 3. open `http://localhost:5173`
 
-## Scripts
+- `npm run dev` - development server
+- `npm run build` - production build
+- `npm run preview` - preview the build
+- `npm run lint` - code linting
+## Scripts 🛠️
+- `npm run dev` - development server
+- `npm run build` - production build
+- `npm run preview` - preview the build
+- `npm run lint` - code linting
 - `npm run dev` - development server
 - `npm run build` - production build
 - `npm run preview` - preview the build
 - `npm run lint` - code linting
 
-## Why this project is cool
+- Smooth transitions and animations.
+- Dark/light theme toggle.
+- One-page navigation with anchors.
+- Easy to extend with new sections or projects.
+## Why this project is cool ✨
+- Smooth transitions and animations.
+- Dark/light theme toggle.
+- One-page navigation with anchors.
+- Easy to extend with new sections or projects.
 - Smooth transitions and animations.
 - Dark/light theme toggle.
 - One-page navigation with anchors.
 - Easy to extend with new sections or projects.
 
-## Customization
+- Change color themes in `src/styles/themes.js`
+- Add or update project entries in `src/data/index.js`
+- Update section behavior in `src/components/sections/*`
+## Customization 🎨
+- Change color themes in `src/styles/themes.js`
+- Add or update project entries in `src/data/index.js`
+- Update section behavior in `src/components/sections/*`
 - Change color themes in `src/styles/themes.js`
 - Add or update project entries in `src/data/index.js`
 - Update section behavior in `src/components/sections/*`
 
-## Project structure
+## Project structure 🗂️
 ```
 src/
 ├── components/
