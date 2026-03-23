@@ -1,4 +1,51 @@
-export const personalData = {
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Skills {
+  core: string[];
+  frontend: string[];
+  devops: string[];
+  testing: string[];
+  tools: string[];
+  ai: string[];
+}
+
+interface Experience {
+  id: number;
+  role: string;
+  team: string | null;
+  company: string;
+  period: string;
+  type: string;
+  highlights: string[];
+  tags: string[];
+}
+
+interface OutsideItem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface PersonalData {
+  name: string;
+  title: string;
+  subtitle: string;
+  email: string;
+  phone: string;
+  location: string;
+  linkedin: string;
+  github: string;
+  profile: string;
+  stats: Stat[];
+  skills: Skills;
+  experience: Experience[];
+  outside: OutsideItem[];
+}
+
+export const personalData: PersonalData = {
   name: 'Guy Hassan',
   title: 'Senior Frontend Engineer',
   subtitle: 'Frontend Infrastructure',

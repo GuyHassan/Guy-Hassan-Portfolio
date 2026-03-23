@@ -1,12 +1,19 @@
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { personalData } from '../../../data';
 import {
   Section, Header, SectionLabel, Heading,
   CategoriesGrid, CategoryCard, CategoryTitle, SkillList, SkillItem,
 } from './Skills.styled';
 
-const CATEGORIES = [
+type SkillKey = 'core' | 'frontend' | 'devops' | 'testing' | 'tools' | 'ai';
+
+interface Category {
+  label: string;
+  key: SkillKey;
+}
+
+const CATEGORIES: Category[] = [
   { label: 'Core', key: 'core' },
   { label: 'Frontend', key: 'frontend' },
   { label: 'DevOps & Cloud', key: 'devops' },
@@ -15,17 +22,17 @@ const CATEGORIES = [
   { label: 'AI Tools', key: 'ai' },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: -8 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
 };

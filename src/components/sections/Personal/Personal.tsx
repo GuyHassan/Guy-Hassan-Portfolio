@@ -1,16 +1,16 @@
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { personalData } from '../../../data';
 import {
   Section, Header, SectionLabel, Heading, SubText, Grid, Card, Icon, Title, Description,
 } from './Personal.styled';
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 };

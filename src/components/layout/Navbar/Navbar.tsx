@@ -9,7 +9,12 @@ import {
   CVLink, MobileCVLink, CTABtn, HamburgerBtn, MobileMenu, MobileNavItem, MobileCTA,
 } from './Navbar.styled';
 
-const navItems = [
+interface NavItem {
+  label: string;
+  to: string;
+}
+
+const navItems: NavItem[] = [
   { label: 'About', to: 'about' },
   { label: 'Journey', to: 'timeline' },
   { label: 'Skills', to: 'skills' },

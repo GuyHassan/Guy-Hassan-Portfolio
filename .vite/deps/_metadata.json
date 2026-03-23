@@ -1,0 +1,68 @@
+{
+  "hash": "5618fa01",
+  "browserHash": "294663b0",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "a44e1a79",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "ccd22b73",
+      "needsInterop": true
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "1d5f0f1f",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "7061dafb",
+      "needsInterop": false
+    },
+    "@fortawesome/react-fontawesome": {
+      "src": "../../node_modules/@fortawesome/react-fontawesome/dist/index.js",
+      "file": "@fortawesome_react-fontawesome.js",
+      "fileHash": "3a774586",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "0a703efe",
+      "needsInterop": false
+    },
+    "@fortawesome/free-brands-svg-icons": {
+      "src": "../../node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
+      "file": "@fortawesome_free-brands-svg-icons.js",
+      "fileHash": "fa608516",
+      "needsInterop": false
+    },
+    "react-scroll": {
+      "src": "../../node_modules/react-scroll/modules/index.js",
+      "file": "react-scroll.js",
+      "fileHash": "898453df",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-FPVLVVG6": {
+      "file": "chunk-FPVLVVG6.js"
+    },
+    "chunk-CHH5FTYW": {
+      "file": "chunk-CHH5FTYW.js"
+    },
+    "chunk-XLAJM6KA": {
+      "file": "chunk-XLAJM6KA.js"
+    },
+    "chunk-HM4MQYWN": {
+      "file": "chunk-HM4MQYWN.js"
+    }
+  }
+}

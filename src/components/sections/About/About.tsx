@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { personalData } from '../../../data';
 import profileImage from '../../../assets/images/profile.jpeg';
 import {
@@ -7,12 +7,12 @@ import {
   SectionLabel, Heading, Bio, StatsGrid, StatItem, StatValue, StatLabel,
 } from './About.styled';
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };

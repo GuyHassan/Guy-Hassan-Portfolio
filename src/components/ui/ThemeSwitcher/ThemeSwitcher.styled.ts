@@ -61,7 +61,7 @@ export const DropdownLabel = styled.p`
   padding: 0.25rem 0.5rem 0.4rem;
 `;
 
-export const ColorOption = styled.button`
+export const ColorOption = styled.button<{ $active: boolean }>`
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -84,7 +84,7 @@ export const ColorOption = styled.button`
   }
 `;
 
-export const Swatch = styled.span`
+export const Swatch = styled.span<{ $color: string }>`
   width: 11px;
   height: 11px;
   border-radius: 50%;

@@ -1,11 +1,19 @@
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import {
   Section, Inner, Header, SectionLabel, Heading, SubText,
   Grid, Card, ProjectType, ProjectTitle, ProjectDesc, Tags, Tag, Arrow,
 } from './Projects.styled';
 
-const PROJECTS = [
+interface Project {
+  type: string;
+  title: string;
+  description: string;
+  tags: string[];
+  href: string | null;
+}
+
+const PROJECTS: Project[] = [
   {
     type: 'Frontend Infrastructure',
     title: 'Nx Monorepo Host Architecture',
@@ -32,12 +40,12 @@ const PROJECTS = [
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 };

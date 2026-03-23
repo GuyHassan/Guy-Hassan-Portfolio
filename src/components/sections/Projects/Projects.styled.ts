@@ -55,7 +55,7 @@ export const Grid = styled.div`
   gap: 1.5rem;
 `;
 
-export const Card = styled(motion.div)`
+export const Card = styled(motion.div)<{ $clickable: boolean }>`
   display: block;
   position: relative;
   background: ${({ theme }) => theme.colors.bgCard};

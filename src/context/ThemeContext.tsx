@@ -1,19 +1,33 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../styles/theme';
 import { accentThemes, DEFAULT_ACCENT } from '../styles/themes';
 
-export const ThemeContext = createContext();
+export type AccentName = keyof typeof accentThemes;
 
-export const useThemeContext = () => useContext(ThemeContext);
+interface ThemeContextValue {
+  isDark: boolean;
+  toggle: () => void;
+  accentName: AccentName;
+  setAccentName: (name: AccentName) => void;
+  accentThemes: typeof accentThemes;
+}
+
+export const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
+
+export const useThemeContext = (): ThemeContextValue => {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error('useThemeContext must be used inside ThemeContextProvider');
+  return ctx;
+};
 
 // Backward-compat aliases
 export const ThemeToggleContext = ThemeContext;
 export const useThemeToggle = useThemeContext;
 
-export const ThemeContextProvider = ({ children }) => {
+export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   const [isDark, setIsDark] = useState(true);
-  const [accentName, setAccentName] = useState(DEFAULT_ACCENT);
+  const [accentName, setAccentName] = useState<AccentName>(DEFAULT_ACCENT as AccentName);
 
   const accentColors = accentThemes[accentName][isDark ? 'dark' : 'light'];
   const baseTheme = isDark ? darkTheme : lightTheme;

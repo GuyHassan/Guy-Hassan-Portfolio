@@ -1,26 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { useThemeContext } from '../../../context/ThemeContext';
+import { useThemeContext, type AccentName } from '../../../context/ThemeContext';
 import { Wrapper, TriggerBtn, Dropdown, DropdownLabel, ColorOption, Swatch } from './ThemeSwitcher.styled';
-
-const SWATCH_COLORS = {
-  golden: '#fcd34d',
-  emerald: '#00d4aa',
-  blue: '#93c5fd',
-  peach: '#fdba74',
-  rose: '#fda4af',
-};
 
 const ThemeSwitcher = () => {
   const { accentName, setAccentName, accentThemes, isDark } = useThemeContext();
   const [open, setOpen] = useState(false);
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Wait for DOM to be ready
     const timer = setTimeout(() => {
-      const handleOutsideClick = (e) => {
-        if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+      const handleOutsideClick = (e: MouseEvent) => {
+        if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
           setOpen(false);
         }
       };
@@ -46,7 +38,7 @@ const ThemeSwitcher = () => {
               <ColorOption
                 key={t.name}
                 $active={accentName === t.name}
-                onClick={() => { setAccentName(t.name); setOpen(false); }}
+                onClick={() => { setAccentName(t.name as AccentName); setOpen(false); }}
               >
                 <Swatch $color={isDark ? t.dark.accent : t.light.accent} />
                 {t.label}

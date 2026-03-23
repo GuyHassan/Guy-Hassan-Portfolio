@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const Nav = styled(motion.nav)`
+export const Nav = styled(motion.nav)<{ $scrolled: boolean }>`
   position: fixed;
   top: 0;
   width: 100%;

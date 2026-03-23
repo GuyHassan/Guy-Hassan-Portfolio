@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   HeroSection, BgImage, BgOverlay, GridLines, Content,
   Greeting, Name, TypewriterLine, BlinkCursor,
-  CTAGroup, PrimaryBtn, SecondaryBtn, CVBtn, ScrollIndicator, ScrollLine,
+  CTAGroup, PrimaryBtn, SecondaryBtn, ScrollIndicator, ScrollLine,
 } from './Hero.styled';
 
 const TITLES = [
@@ -12,7 +12,7 @@ const TITLES = [
   'Microfrontend Architect',
 ];
 
-const useTypewriter = (texts, speed = 60, pause = 2000) => {
+const useTypewriter = (texts: string[], speed = 60, pause = 2000): string => {
   const [displayed, setDisplayed] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -20,7 +20,7 @@ const useTypewriter = (texts, speed = 60, pause = 2000) => {
 
   useEffect(() => {
     const current = texts[textIndex];
-    let timeout;
+    let timeout: ReturnType<typeof setTimeout> | undefined;
 
     if (!deleting && charIndex < current.length) {
       timeout = setTimeout(() => setCharIndex((i) => i + 1), speed);

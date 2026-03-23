@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { personalData } from '../../../data';
 import {
   Section, Inner, Header, SectionLabel, Heading,
@@ -10,7 +10,7 @@ import {
 const Timeline = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   return (
     <Section id="timeline" ref={ref}>

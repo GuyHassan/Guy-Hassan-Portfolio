@@ -3,7 +3,7 @@ import { CursorOuter, CursorInner } from './Cursor.styled';
 
 const Cursor = () => {
   const [visible, setVisible] = useState(() => window.matchMedia('(pointer: fine)').matches);
-  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const [pos, setPos] = useState<{ x: number; y: number }>({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
   // Once a touch is detected, never show cursor again (handles DevTools simulation too)
   const hasTouched = useRef(false);
@@ -14,7 +14,7 @@ const Cursor = () => {
       setVisible(false);
     };
 
-    const onMouseMove = (e) => {
+    const onMouseMove = (e: MouseEvent) => {
       if (hasTouched.current) return;
       setVisible(true);
       setPos({ x: e.clientX, y: e.clientY });

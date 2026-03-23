@@ -90,7 +90,7 @@ export const TimelineItem = styled(motion.div)`
   }
 `;
 
-export const TimelineDot = styled(motion.div)`
+export const TimelineDot = styled(motion.div)<{ $active: boolean }>`
   position: absolute;
   left: -2rem;
   top: 1.2rem;
@@ -118,7 +118,7 @@ export const TimelineDot = styled(motion.div)`
   }
 `;
 
-export const Card = styled(motion.div)`
+export const Card = styled(motion.div)<{ $active: boolean }>`
   background: ${({ theme }) => theme.colors.bgCard};
   border: 1px solid ${({ $active, theme }) =>
     $active ? theme.colors.borderHover : theme.colors.border};
